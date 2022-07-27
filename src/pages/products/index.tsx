@@ -1,13 +1,15 @@
 import Header from "components/header";
 import PageWrapper from "components/pageWrapper";
 import React from "react";
+import { Outlet } from "react-router-dom";
 
-const Landing: React.FC = () => {
+const Products: React.FC = () => {
   return (
-    <PageWrapper style={{ backgroundColor: "var(--background-color)" }}>
+    <PageWrapper>
       <Header />
+      <Outlet />
     </PageWrapper>
   );
 };
 
-export default Landing;
+export default Products;

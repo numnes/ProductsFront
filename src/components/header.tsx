@@ -13,6 +13,7 @@ const Header: React.FC = () => {
         top: 0,
         left: 0,
         width: "100%",
+        zIndex: 100,
       }}
     >
       <AppBar position="static">
@@ -32,7 +33,7 @@ const Header: React.FC = () => {
             }}
           />
           <Typography variant="h6" color="inherit" component="div">
-            Photos
+            Products List
           </Typography>
         </Toolbar>
       </AppBar>

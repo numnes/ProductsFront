@@ -19,6 +19,6 @@ export const GlobalStyles = createGlobalStyle`
         --hylight-color: #07A4FB;
         --round-border: 1rem;
         --box-shadow-paper: 0px 2px 8px rgba(0, 0, 0, 0.5);
-        --background-color: #f6f6f7;
+        --background-color: #F0F0F1;
     }
 `;
