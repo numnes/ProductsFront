@@ -4,6 +4,7 @@ import PageWrapper from "components/pageWrapper";
 import React from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import LogoMyPharma from "assets/images/LogoMyPharma.png";
+import { useLayoutSize } from "contexts/hooks/useLayoutSize";
 
 type LoginInputs = {
   username: string;
@@ -18,6 +19,8 @@ const Login: React.FC = () => {
     control,
     formState: { errors },
   } = useForm<LoginInputs>();
+
+  const { size } = useLayoutSize();
 
   const onSubmit: SubmitHandler<LoginInputs> = (data: LoginInputs) => {
     console.log(data);
@@ -42,14 +45,24 @@ const Login: React.FC = () => {
           color: "white",
         }}
       >
-        <img src={LogoMyPharma} alt="Products" />
-        <Typography variant="h3" style={{ fontWeight: "bolder" }}>
+        <img
+          src={LogoMyPharma}
+          alt="Products"
+          style={{
+            width: "100px",
+          }}
+        />
+        <Typography
+          variant={size === "small" ? "h4" : "h3"}
+          style={{ fontWeight: "bolder" }}
+        >
           Products List
         </Typography>
       </Stack>
       <Stack
         style={{
-          width: "40rem",
+          width: size === "small" ? "100%" : "40rem",
+          margin: size === "small" ? "0.8rem 0 " : "0rem",
           height: "30rem",
           display: "flex",
           justifyContent: "center",
@@ -94,6 +107,7 @@ const Login: React.FC = () => {
                   variant="outlined"
                   onChange={onChange}
                   value={value}
+                  fullWidth
                   label={"E-mail"}
                   error={errors.username === null}
                   helperText={errors.username?.message}
@@ -109,6 +123,7 @@ const Login: React.FC = () => {
                 <TextField
                   variant="outlined"
                   onChange={onChange}
+                  fullWidth
                   value={value}
                   label={"Password"}
                   type="password"
@@ -117,7 +132,11 @@ const Login: React.FC = () => {
                 />
               )}
             />
-            <LoadingButton variant="contained" type="submit">
+            <LoadingButton
+              style={{ height: "56px" }}
+              variant="contained"
+              type="submit"
+            >
               Login
             </LoadingButton>
           </Stack>
