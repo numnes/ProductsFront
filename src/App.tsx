@@ -6,6 +6,7 @@ import { theme } from "style/theme/theme";
 import { GlobalStyles } from "style/globalStyles";
 import { useMediaQuery } from "@mui/material";
 import { Context } from "contexts/context";
+import { SnackbarProvider } from "notistack";
 
 const App: React.FC = () => {
   //   const [rootElement, setRootElement] = React.useState<React.ReactNode | null>(
@@ -24,15 +25,17 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Context.Provider
-        value={{
-          size: matchedSize,
-        }}
-      >
-        <SessionProvider>
-          <GlobalRouter />
-        </SessionProvider>
-      </Context.Provider>
+      <SnackbarProvider maxSnack={3}>
+        <Context.Provider
+          value={{
+            size: matchedSize,
+          }}
+        >
+          <SessionProvider>
+            <GlobalRouter />
+          </SessionProvider>
+        </Context.Provider>
+      </SnackbarProvider>
     </ThemeProvider>
   );
 };

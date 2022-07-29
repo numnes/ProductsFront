@@ -10,8 +10,10 @@ const GlobalRouter: React.FC = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/products" element={<Products />}>
           <Route path="" element={<ListProducts />} />
+          <Route path="new" element={<ViewProducts />} />
           <Route path=":id" element={<ViewProducts />} />
         </Route>
         <Route path="/login" element={<Login />} />

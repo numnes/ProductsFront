@@ -13,7 +13,8 @@ const PageContent: React.FC<{ children: React.ReactNode | null }> = ({
     <Grid
       style={{
         display: "grid",
-        width: size === "large" ? "60%" : "100%",
+        minWidth: size === "large" ? "60%" : "100%",
+        width: "auto",
         height: "100%",
         backgroundColor: "white",
         padding: size !== "small" ? "2rem 3rem 0px 3rem" : "2rem 1rem 0px 1rem",

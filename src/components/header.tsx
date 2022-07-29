@@ -10,7 +10,8 @@ import { Box } from "@mui/system";
 import React from "react";
 import { Icon } from "components/Icon";
 import LogoMyPharma from "assets/images/LogoMyPharma.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSession } from "contexts/session";
 
 const Header: React.FC = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -21,6 +22,8 @@ const Header: React.FC = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const navigate = useNavigate();
+  const { logout } = useSession();
   return (
     <Box
       sx={{
@@ -56,7 +59,7 @@ const Header: React.FC = () => {
               "aria-labelledby": "menu-button",
             }}
           >
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
+            <MenuItem onClick={() => logout(navigate)}>Logout</MenuItem>
           </Menu>
           <Link
             to={"/products"}
