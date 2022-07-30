@@ -160,7 +160,7 @@ const ViewProducts: React.FC = () => {
             src={productData.image}
             alt={productData.name}
           />
-          <Button
+          {/* <Button
             style={{
               display: "flex",
               gap: "0.8rem",
@@ -172,7 +172,7 @@ const ViewProducts: React.FC = () => {
           >
             Change Image
             <Icon name="Image" size={20} />
-          </Button>
+          </Button> */}
         </Stack>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Stack
