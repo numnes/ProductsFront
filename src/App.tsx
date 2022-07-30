@@ -1,5 +1,5 @@
 import { SessionProvider } from "contexts/session";
-import React, { useEffect } from "react";
+import React from "react";
 import GlobalRouter from "routes/GlobalRouter";
 import { ThemeProvider, useTheme } from "@mui/material/styles";
 import { theme } from "style/theme/theme";

@@ -75,6 +75,7 @@ const Header: React.FC = () => {
               style={{
                 width: "40px",
               }}
+              alt="Products List"
             />
             <Typography variant="h6" color="inherit" component="div">
               Products List
