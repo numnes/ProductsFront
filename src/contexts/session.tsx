@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { HttpResponse, HttpService } from "services/httpService";
 import { LoginForm } from "types/LoginForm";
-import { User } from "types/User";
 import { parseCookies, setCookie, destroyCookie } from "nookies";
 
 type SessionProviderType = {

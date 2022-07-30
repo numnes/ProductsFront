@@ -25,14 +25,7 @@ const ViewProducts: React.FC = () => {
   // Hooks
   const { size } = useLayoutSize();
   const { id } = useParams();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    setValue,
-    watch,
-    formState: { errors },
-  } = useForm<Product>();
+  const { register, handleSubmit, reset, watch } = useForm<Product>();
   const { httpService, checkLogin } = useSession();
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();

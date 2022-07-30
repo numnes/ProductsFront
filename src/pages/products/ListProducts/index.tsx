@@ -1,15 +1,11 @@
 import {
   Box,
   Button,
-  Grid,
-  Input,
   InputAdornment,
   MenuItem,
   Pagination,
   Stack,
-  styled,
   TextField,
-  PaginationItem,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -31,8 +27,6 @@ const ListProducts: React.FC = () => {
   const {
     register,
     handleSubmit,
-    watch,
-    control,
     formState: { errors },
   } = useForm<SearchInputs>();
   const { size } = useLayoutSize();
@@ -73,7 +67,7 @@ const ListProducts: React.FC = () => {
   //States
   const [loaded, setLoaded] = React.useState<boolean>(false);
   const [products, setProducts] = React.useState<Product[]>([]);
-  const [perPage, setPerPage] = React.useState<number>(10);
+  const [perPage] = React.useState<number>(10);
   const [page, setPage] = React.useState<number>(1);
   const [total, setTotal] = React.useState<number>(100);
 

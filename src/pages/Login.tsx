@@ -33,7 +33,7 @@ const Login: React.FC = () => {
       const logged = await checkLogin();
       if (logged) navigate("/products");
     })();
-  });
+  }, [setLoginCheck, loginCheck, navigate, checkLogin]);
 
   // Functions
   const onSubmit: SubmitHandler<LoginForm> = async (data: LoginForm) => {
