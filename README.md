@@ -7,7 +7,7 @@
  A aplicação completa está hospedada em : https://productsfront.herokuapp.com 
 
 ### Execução
-Este projeto foi criado em ReactJs utilizando o padrão *create react app*, para executá-lo basta clonar o repositório em uma máquina com o NodeJs instalado e executar os comando abaixo:
+Este projeto foi criado em ReactJs utilizando o padrão *create react app*, para executá-lo basta clonar o repositório em uma máquina com o NodeJs instalado e executar os comandos abaixo:
 
 ```bash
 ## Npm 
